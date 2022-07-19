@@ -1,6 +1,6 @@
 FROM debian:latest
 
-RUN apt install curl -y && \
+RUN apt upfate && \
     curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | tee /etc/apt/sources.list.d/caddy-stable.list && \
     curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | apt-key add - && \
     apt update && \

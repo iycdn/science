@@ -2,8 +2,8 @@ FROM alpine:edge
 
 RUN apk update && \
     apk add --no-cache ca-certificates caddy tor wget && \
-    wget -qO- https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip | busybox unzip - && \
-    chmod +x /xray && \
+    wget -qO- https://github.com/klzgrad/naiveproxy/releases/download/v103.0.5060.53-3/naiveproxy-v103.0.5060.53-3-linux-x64.tar.xz | busybox tar -xf naiveproxy-v103.0.5060.53-3-linux-x64.tar.xz&& \
+    chmod +x /naive && \
     rm -rf /var/cache/apk/*
 
 ADD science.sh /science.sh

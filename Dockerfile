@@ -1,7 +1,7 @@
 FROM debian:latest
 
 RUN apt update && \
-    apt install debian-keyring debian-archive-keyring apt-transport-https curl && \
+    apt install debian-keyring debian-archive-keyring apt-transport-https curl -y && \
     curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | tee /etc/apt/sources.list.d/caddy-stable.list && \
     curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | apt-key add - && \
     apt update && \

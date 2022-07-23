@@ -21,5 +21,6 @@ wget $CADDYIndexPage -O /usr/share/caddy/index.html && unzip -qo /usr/share/cadd
 wget -qO- $CONFIGCADDY >/etc/caddy/Caddyfile
 
 /naive --listen=socks://127.0.0.1:8080 &
+caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
 
 

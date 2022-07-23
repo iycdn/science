@@ -17,4 +17,4 @@ wget -qO- $CONFIGCADDY >/etc/caddy/Caddyfile
 
 /naive --listen=socks://127.0.0.1:8080 &
 
-caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+

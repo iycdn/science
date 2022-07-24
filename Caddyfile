@@ -1,14 +1,18 @@
-localhost:80 {
-gzip
-timeouts none
-root /usr/share/caddy
-file_server {
- root /usr/share/caddy
-  }
-forwardproxy {
-  basicauth user pass
-  hide_ip
-  hide_via
-  upstream http://127.0.0.1:8080
-  }
+{
+	order forward_proxy before route
+	admin off
 }
+
+:80, localhost { #xx.yy修改为自己的域名。注意：逗号与域名之间有一个空格。
+	forward_proxy {
+		basic_auth user pass #naiveproxy用户与密码，修改为自己的。
+		hide_ip
+		hide_via
+		upstream http://127.0.0.1:8080
+	}
+
+	file_server {
+			root /usr/share/caddy #修改为自己存放的WEB文件路径
+	}
+}
+
